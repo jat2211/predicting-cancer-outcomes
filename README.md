@@ -1,10 +1,8 @@
 # predicting-cancer-outcomes
 ## Introduction
-Using the simulated clinical and genomic data in this repository, I built and evaluated a predictive random forest model of one-year survival after diagnosis with non-small cell lung cancer (NSCLC). The aim of this project is to showcase not only an ability to build a machine learning model but to **extensively** evaluate and manipulate multiple datasets using Python packages such as Pandas.
+Using the simulated clinical and genomic data in this repository, I built and evaluated a predictive random forest model of one-year survival after diagnosis with non-small cell lung cancer (NSCLC). The aim of this project is to showcase not only an ability to build a machine learning model but to **extensively** evaluate and manipulate multiple datasets using Python packages such as Pandas. I'll link the proper notebook containing the project itself [here]() and I would highly recommend that you check it out.
 
-## Data Exploration and Visualization
-update
-## Pre-Processing Report
+## Pre-Processing and Data Exploration Report
 Initially, I noticed that the “Grade” column was not labeled as it should be. The description of the data states that the tumor grade is either 1-4 or unspecified. The value 9 could also be a typo of the value 1, but since I couldn’t confirm this without seeing the original method of data collection nor consulting anyone immediately with domain expertise, I saw it best to drop this column.
 
 The columns “T”, “N”, and “M” were of great interest to me and I approached these features by converting “T” and “N” into the proper dtypes as needed, notably making them numeric and dropping the original scale such that the model could use these feature in an easy manner. Again, I felt that it would be sufficient to classify those points with succeeding letters as just the numeric values attached to them. For the “M” feature, I noticed that the data was sparse and also heavily skewed towards one of the feature’s classes. Likewise, I calculated the survival rate of patients for cases where this feature was equal to just one or the other and saw no significant difference in the two, albeit one of the classes had a small sample size. I decided to drop this column.
