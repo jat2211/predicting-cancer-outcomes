@@ -25,12 +25,14 @@ I used a random forest machine learning model that predicted the outcomes with [
 I used a random forest algorithm, specifically the sklearn.RandomForestClassifier because of the power of ensemble learning and bagging. I figured a decision tree-based classifier would allow me to tune the hyperparameters easily if needed since I have more experience with this algorithm than some others. I chose the “entropy” criterion because it might provide better results at the cost of runtime, however, runtime wasn’t an issue since the dataset was small so I took advantage of this again. I also lowered the number of estimators from 100 to 10 to try and avoid any issues of overfitting since the data already only contained 190 data points.
 
 ## Results and Shortcomings
-The model ran with
+The model ran with an accuracy of 89% on the test data, which is an improvement of 5% on the baseline accuracy. Naturally, since this dataset already has a high accuracy, I suspected that there would be a high rate of false negatives, and using a confusion matrix confirms this.
+
+I spent a lot of time on preprocessing and assessing the data. Should I have taken more time on this project, I would definitely have preferred to run an analysis on the correlation between variables. Especially with the TNM features, should there be some correlation between them, then it could be helpful to use those features to predict null values. I handled most cases of null values using the mean, but I can see better alternatives using smaller models and domain expertise to fill in these gaps. I also mostly ignored the “Primary.Site” feature as I mentioned above, but more time would allow me to calculate the survival rates and deduce if it’s worth one-hot encoding this feature. Lastly, I would have liked to tune the hyperparameters using a validation set, but again decided against it in the interest of time.
 
 ## Skills Used
 - decision trees
 - bagging (random forest model)
 - Pandas
 - one-hot encoding
-- data cleaning and expansion
+- data cleaning and feature expansion
 - **Broader domains: machine learning, data science, data manipulation**
